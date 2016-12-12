@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+/*Simple reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /*You can use any kind of background here.*/
+  background: #6b92b9;
+}
+
+canvas {
+  display: block;
+}
