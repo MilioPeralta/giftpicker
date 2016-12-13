@@ -11,9 +11,14 @@ html, body {
 
 body {
   /*You can use any kind of background here.*/
-  background: #6b92b9;
+  background: #0a3a69;
+  overflow: hidden;
 }
 
 canvas {
   display: block;
+}
+
+.row {
+  margin: 0;
 }

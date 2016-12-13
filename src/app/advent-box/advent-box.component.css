@@ -24,6 +24,7 @@
     transform: rotate(0deg);
   }
 }
+
 @keyframes shake {
   0% {
     -webkit-transform: rotate(0deg);
@@ -50,6 +51,7 @@
     transform: rotate(0deg);
   }
 }
+
 main {
   text-align: center;
   padding: 1em;
@@ -63,8 +65,8 @@ main {
 
 article {
   display: inline-block;
-  width: 9em;
-  height: 9em;
+  width: 10em;
+  height: 10em;
   margin: 0.5em;
   -webkit-perspective: 850px;
   perspective: 850px;
@@ -86,6 +88,7 @@ article {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+
 .box h2 {
   position: absolute;
   width: 3em;
@@ -107,6 +110,17 @@ article {
 article:hover .box {
   background: -webkit-linear-gradient(315deg, #cd8d9c 50%, #c57c8d 50%);
   background: linear-gradient(135deg, #cd8d9c 50%, #c57c8d 50%);
+  -webkit-transform: rotateY(-40deg);
+  transform: rotateY(-40deg);
+  -webkit-perspective-origin: 0;
+  perspective-origin: 0;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+article.active .box {
+  background: -webkit-linear-gradient(315deg, #cd8d9c 50%, #c57c8d 50%);
+  background: linear-gradient(135deg, #cd8d9c 50%, #c57c8d 50%);
   -webkit-transform: rotateY(-97deg);
   transform: rotateY(-97deg);
   -webkit-perspective-origin: 0;
@@ -114,31 +128,36 @@ article:hover .box {
   -webkit-transition: all .4s ease-in;
   transition: all .4s ease-in;
 }
-article:hover .box h2 {
+
+article.active .box h2 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-article:hover .bauble {
-  display: inline-block;
+
+article.active .bauble {
   -webkit-animation: shake 1s;
   animation: shake 1s;
   -webkit-transform-origin: 50% 0;
   transform-origin: 50% 0;
 }
 
+article.active .bauble .name {
+  visibility: visible;
+}
+
 .present {
   position: absolute;
   top: 0;
   left: 0;
-  background: #0f0e1f;
+  background: transparent;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15), inset 0 0 30px 20px rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
 .bauble {
   position: relative;
-  width: 2.75em;
-  height: 2.75em;
+  width: 3.5em;
+  height: 3.5em;
   background: #a94b61;
   margin: 25% auto 0 auto;
   font-size: 2em;
@@ -148,6 +167,11 @@ article:hover .bauble {
   border-radius: 50%;
   text-align: center;
 }
+
+.bauble .name {
+  visibility: hidden;
+}
+
 .bauble:after {
   content: "";
   position: absolute;
@@ -158,6 +182,7 @@ article:hover .bauble {
   height: 10%;
   background: inherit;
 }
+
 .bauble:before {
   content: "";
   width: 12%;

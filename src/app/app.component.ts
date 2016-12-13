@@ -10,7 +10,45 @@ export class AppComponent implements OnInit, AfterViewInit {
   rectH: number;
   context: CanvasRenderingContext2D;
 
+  peoples: any[] = this.shuffle([
+    { name: 'Christine' },
+    { name: 'Clément' },
+    { name: 'Clément' },
+    { name: 'Diamantine' },
+    { name: 'Edouard' },
+    { name: 'Emmanuel' },
+    { name: 'Fabien' },
+    { name: 'Florian' },
+    { name: 'Guillaume' },
+    { name: 'Mickael' },
+    { name: 'Milio' },
+    { name: 'Olivier F.' },
+    { name: 'Philippe' },
+    { name: 'Quentin' },
+    { name: 'Régis' },
+    { name: 'Shahnaz' },
+    { name: 'Sylvain' },
+    { name: 'Thomas' },
+    { name: 'Ubald' },
+    { name: 'Frédéric' },
+    { name: 'Olivier T.' },
+    { name: 'Stéphane' },
+    { name: 'Thomas' },
+    { name: 'Adrien' },
+    { name: 'Charlotte' },
+    { name: 'Fabrice' },
+  ])
+
   @ViewChild("myCanvas") myCanvas;
+
+  shuffle(a) {
+    for (let i = a.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+
+    return a;
+  }
 
   ngOnInit() {
     //canvas dimensions
@@ -33,7 +71,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     var ctx = this.context;
 
     //snowflake particles
-    var mp = 50; //max particles
+    var mp = 250; //max particles
     var particles = [];
     for (var i = 0; i < mp; i++) {
       particles.push({

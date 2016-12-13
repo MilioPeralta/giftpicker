@@ -1,10 +1,10 @@
 <div>
   <canvas #myCanvas [attr.width]="rectW" [attr.height]="rectH"></canvas>
-  <div style="position: absolute; top: 25%; width:50%;margin: auto;">
-    <ul>
-      <li *ngFor="let item of [1,2,3,4,5,6,7,8]; let i = index">
-        <app-advent-box [content]="item"></app-advent-box>
-      </li>
-    </ul>
+  <div class="wrapper">
+    <div class="row around-xs">
+      <div class="col-xs-3" *ngFor="let people of peoples; let i = index" style="text-align: center;">
+        <app-advent-box [content]="people"></app-advent-box>
+      </div>
+    </div>
   </div>
 </div>
