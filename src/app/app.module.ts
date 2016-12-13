@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AdventBoxComponent } from './advent-box/advent-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdventBoxComponent
   ],
   imports: [
     BrowserModule,
